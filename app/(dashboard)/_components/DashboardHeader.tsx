@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import { useUser } from '@clerk/nextjs'
 import { Headphones, ThumbsUp } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 
 export const DashboardHeader = () => {
     const {isLoaded, user} = useUser()
@@ -11,7 +10,7 @@ export const DashboardHeader = () => {
     <div className="flex items-start justify-between">
       <div className="space-y-1">
         <p className="text-sm text-muted-foreground">Nice to see you</p>
-        <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight">
+        <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight dark:text-black">
           {isLoaded ? (user?.fullName ?? user?.firstName ?? "there") : "..."}
         </h1>
       </div>

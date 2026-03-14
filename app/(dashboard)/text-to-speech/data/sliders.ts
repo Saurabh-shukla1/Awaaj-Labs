@@ -1,5 +1,5 @@
 interface Slider {
-    id: "temperature" | "topP" | "topK" | "repetitionPenalty" | "presencePenalty" | "frequencyPenalty";
+    id: "temperature" | "topP" | "topK" | "repetitionPenalty";
     label: string;
     leftLabel: string;
     rightLabel: string;
@@ -49,5 +49,5 @@ export const sliders: Slider[] = [
     max: 2,
     step: 0.1,
     defaultValue: 1.2,
-  },
+  }
 ];

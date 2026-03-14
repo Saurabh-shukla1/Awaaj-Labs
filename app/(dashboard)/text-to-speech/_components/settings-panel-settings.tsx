@@ -5,6 +5,7 @@ import { useStore } from '@tanstack/react-form';
 import { FieldGroup, FieldLabel, Field } from '@/components/ui/field';
 import { sliders } from '../data/sliders';
 import { Slider } from '@/components/ui/slider';
+import { VoiceSelector } from './voice-selector';
 
 export const SettingsPanelSettings = () => {
     const form = useTypedAppFormContext(ttsFormOptions);
@@ -13,9 +14,7 @@ export const SettingsPanelSettings = () => {
     <>
       {/* Voice Selection Dropdown */}
       <div className="border-b border-dashed p-4">
-        <p className="text-sm text-muted-foreground">
-          Voice Selection Coming Soon
-        </p>
+        <VoiceSelector />
       </div>
       {/* VOice adjustment Section */}
       <div className="p-4 flex-1">

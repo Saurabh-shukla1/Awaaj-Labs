@@ -4,6 +4,8 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import {shadcn} from "@clerk/themes"
+import { TRPCReactProvider } from "./trpc/client";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,20 +35,27 @@ export default function RootLayout({
       afterSignOutUrl="/sign-in"
       signInUrl="/sign-in"
       signUpUrl="/sign-up"
+      appearance={{
+        theme: shadcn,
+      }}
     >
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+      <TRPCReactProvider>
+        <html lang="en" suppressHydrationWarning>
+          <body
+            className={`${inter.variable} ${geistMono.variable} antialiased`}
           >
-            {children}
-            <Toaster />
-          </ThemeProvider>
-        </body>
-      </html>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+              <Toaster />
+            </ThemeProvider>
+          </body>
+        </html>
+      </TRPCReactProvider>
     </ClerkProvider>
   );
 }

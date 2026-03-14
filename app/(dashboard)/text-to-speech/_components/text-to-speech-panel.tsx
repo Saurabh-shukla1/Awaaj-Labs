@@ -1,14 +1,12 @@
 "use client";
-import { Textarea } from "@/components/ui/textarea";
-import React, { useState } from "react";
-import { COST_PER_CHARACTER, TEXT_MAX_LENGTH } from "../data/constants";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Coins } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 import { useTypedAppFormContext } from "@/hooks/use-app-form";
-import { ttsFormOptions } from "./text-to-speech-form";
 import { useStore } from "@tanstack/react-form";
+import { Coins } from "lucide-react";
+import { COST_PER_CHARACTER, TEXT_MAX_LENGTH } from "../data/constants";
 import { GenerateButton } from "./generate-button";
+import { ttsFormOptions } from "./text-to-speech-form";
 
 export const TextToSpeechPanel = () => {
   const form = useTypedAppFormContext(ttsFormOptions)
